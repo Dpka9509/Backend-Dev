@@ -1,0 +1,19 @@
+git init # Initialize repository
+git clone <url> # Clone repository
+git status # Check status
+git add <file> # Stage file
+git commit -m "message" # Commit changes
+git push # Push to remote
+git pull # Pull from remote
+git branch # List branches
+git checkout <branch> # Switch branch
+git merge <branch> # Merge branch
+git log # View history
+git status # Check current state
+git log --oneline # Quick history view
+git diff # See changes
+git reset HEAD <file> # Unstage file
+git checkout -- <file> # Discard changes
+git clean -n # See untracked files
+git clean -fd # Remove untracked files
+git reflog # View all reference logs
