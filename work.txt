@@ -1,19 +1,66 @@
-git init # Initialize repository
-git clone <url> # Clone repository
-git status # Check status
-git add <file> # Stage file
-git commit -m "message" # Commit changes
-git push # Push to remote
-git pull # Pull from remote
-git branch # List branches
-git checkout <branch> # Switch branch
-git merge <branch> # Merge branch
-git log # View history
-git status # Check current state
-git log --oneline # Quick history view
-git diff # See changes
-git reset HEAD <file> # Unstage file
-git checkout -- <file> # Discard changes
-git clean -n # See untracked files
-git clean -fd # Remove untracked files
-git reflog # View all reference logs
+EXERCISE1
+mkdir basic-git-workflow
+cd basic-git-workflow
+git init
+touch README.md
+git add README.md
+git commit -m "Initial commit: add README"
+echo "This is my first Git project" >> README.md
+git add README.md
+git commit -m "Update README content"
+git log
+
+EXERCISE2
+git checkout -b feature
+touch feature.txt
+git add feature.txt
+git commit -m "Add feature file"
+git checkout main
+git merge feature
+git branch -d feature
+
+
+EXERCISE3
+git checkout -b branch1
+echo "Line from branch1" > conflict.txt
+git add conflict.txt
+git commit -m "branch1 change"
+
+git checkout main
+git checkout -b branch2
+echo "Line from branch2" > conflict.txt
+git add conflict.txt
+git commit -m "branch2 change"
+
+git checkout main
+git merge branch1
+git merge branch2
+git add conflict.txt
+git commit -m "Resolve conflict"
+
+EXERCISE4
+git clone https://github.com/YOUR-USERNAME/repo-name.git
+cd repo-name
+git checkout -b my-feature
+echo "My contribution" >> contribution.txt
+git add .
+git commit -m "Add contribution"
+git push origin my-feature
+
+EXERCISE5
+mkdir advanced-workflow
+cd advanced-workflow
+git init
+touch app.js index.html style.css
+git add .
+git commit -m "Initial setup"
+touch .gitignore
+echo "node_modules/" >> .gitignore
+git add .gitignore
+git commit -m "Add gitignore"
+echo "Temporary work" >> app.js
+git stash
+git tag -a v1.0 -m "Version 1.0"
+git remote add origin https://github.com/YOUR-USERNAME/repo-name.git
+git push -u origin main
+git push origin --tags
