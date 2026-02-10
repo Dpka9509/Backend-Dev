@@ -1,13 +1,14 @@
 const express = require("express");
-const app = express();
+const fs = require("fs");
+const path = require("path");
 
-app.set("view engine", "ejs");
-app.use(express.static("public"));
+const router = express.Router();
 
-app.get("/gallery", (req, res) => {
-  res.render("gallery", {
-    images: ["img1.jpg", "img2.jpg"]
-  });
+router.get("/gallery", (req, res) => {
+  const imagePath = path.join(__dirname, "../public");
+  const files = fs.readdirSync(imagePath);
+
+  res.render("index", { images: files });
 });
 
-app.listen(3000, () => console.log("Q5 running on port 3000"));
+module.exports = router;
