@@ -1,70 +1,44 @@
 let employees = [
-    {
-        id: 1,
-        name: "Deepika",
-        email: "deepika@gmail.com",
-        department: "IT",
-        basicSalary: 50000,
-        joiningDate: "2024-01-15"
-    }
+  {
+    id: 1,
+    name: "Deepika",
+    gender: "Female",
+    department: "IT",
+    basicSalary: 50000,
+    joiningDate: "2024-01-15"
+  }
 ];
 
 let currentId = 2;
 
+const getAllEmployees = async () => employees;
 
-// Get all employees
-const getAllEmployees = async () => {
-    return employees;
-};
+const getEmployeeById = async (id) =>
+  employees.find(emp => emp.id === parseInt(id));
 
-// Get employee by ID
-const getEmployeeById = async (id) => {
-    return employees.find(emp => emp.id === parseInt(id));
-};
-
-// Create new employee
 const createEmployee = async (data) => {
-    const newEmployee = {
-        id: currentId++,
-        ...data
-    };
-
-    employees.push(newEmployee);
-    return newEmployee;
+  const newEmployee = { id: currentId++, ...data };
+  employees.push(newEmployee);
+  return newEmployee;
 };
 
-// Update employee
 const updateEmployee = async (id, data) => {
-    const index = employees.findIndex(
-        emp => emp.id === parseInt(id)
-    );
-
-    if (index === -1) return null;
-
-    employees[index] = {
-        ...employees[index],
-        ...data
-    };
-
-    return employees[index];
+  const index = employees.findIndex(emp => emp.id === parseInt(id));
+  if (index === -1) return null;
+  employees[index] = { ...employees[index], ...data };
+  return employees[index];
 };
 
-// Delete employee
 const deleteEmployee = async (id) => {
-    const index = employees.findIndex(
-        emp => emp.id === parseInt(id)
-    );
-
-    if (index === -1) return null;
-
-    const deleted = employees.splice(index, 1);
-    return deleted[0];
+  const index = employees.findIndex(emp => emp.id === parseInt(id));
+  if (index === -1) return null;
+  return employees.splice(index, 1)[0];
 };
 
 module.exports = {
-    getAllEmployees,
-    getEmployeeById,
-    createEmployee,
-    updateEmployee,
-    deleteEmployee
+  getAllEmployees,
+  getEmployeeById,
+  createEmployee,
+  updateEmployee,
+  deleteEmployee
 };

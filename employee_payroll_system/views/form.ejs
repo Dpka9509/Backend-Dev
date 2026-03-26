@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Employee</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #eef1f5;
+      padding: 40px;
+    }
+
+    .card {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .row {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .inline {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .inline input {
+      width: auto;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .submit {
+      background: #7cb518;
+      color: white;
+    }
+
+    .cancel {
+      background: #ccc;
+      text-decoration: none;
+      color: black;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+  <h2>Employee Payroll Form</h2>
+
+  <form action="/employees" method="POST">
+
+    <div class="row">
+      <label>Name</label>
+      <input type="text" name="name" required>
+    </div>
+
+    <div class="row">
+      <label>Gender</label>
+      <div class="inline">
+        <label><input type="radio" name="gender" value="Male"> Male</label>
+        <label><input type="radio" name="gender" value="Female"> Female</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <label>Department</label>
+      <div class="inline">
+        <label><input type="checkbox" name="department" value="HR"> HR</label>
+        <label><input type="checkbox" name="department" value="Sales"> Sales</label>
+        <label><input type="checkbox" name="department" value="Finance"> Finance</label>
+        <label><input type="checkbox" name="department" value="Engineer"> Engineer</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <label>Salary</label>
+      <select name="basic_sal">
+        <option value="10000">10,000</option>
+        <option value="20000">20,000</option>
+        <option value="30000">30,000</option>
+        <option value="40000">40,000</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <label>Start Date</label>
+      <input type="date" name="date">
+    </div>
+
+    <div class="row">
+      <label>Notes</label>
+      <textarea name="notes"></textarea>
+    </div>
+
+    <div class="actions">
+      <a href="/employees" class="cancel">Cancel</a>
+      <button type="submit" class="submit">Submit</button>
+    </div>
+
+  </form>
+</div>
+
+</body>
+</html>

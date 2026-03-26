@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employee Payroll Form</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="form-card">
+    <h2>Employee Payroll Form</h2>
+
+    <form method="POST" action="/employees">
+      <label>Name</label>
+      <input type="text" name="name" required>
+
+      <label>Profile Image</label>
+      <div class="avatars">
+        <label><input type="radio" name="avatar" value="/images/1.png"><img src="/images/1.png"></label>
+        <label><input type="radio" name="avatar" value="/images/2.png"><img src="/images/2.png"></label>
+        <label><input type="radio" name="avatar" value="/images/3.png"><img src="/images/3.png"></label>
+        <label><input type="radio" name="avatar" value="/images/4.png"><img src="/images/4.png"></label>
+      </div>
+
+      <label>Gender</label>
+      <input type="radio" name="gender" value="Male"> Male
+      <input type="radio" name="gender" value="Female"> Female
+
+      <label>Department</label>
+      <input type="checkbox" name="department" value="HR"> HR
+      <input type="checkbox" name="department" value="Sales"> Sales
+      <input type="checkbox" name="department" value="Finance"> Finance
+      <input type="checkbox" name="department" value="Engineer"> Engineer
+
+      <label>Salary</label>
+      <select name="salary">
+        <option>10000</option>
+        <option>20000</option>
+        <option>30000</option>
+        <option>40000</option>
+      </select>
+
+      <label>Start Date</label>
+      <input type="date" name="startDate">
+
+      <label>Notes</label>
+      <textarea name="notes"></textarea>
+
+      <div class="buttons">
+        <a href="/" class="btn-secondary">Cancel</a>
+        <button class="btn-primary">Submit</button>
+        <button type="reset" class="btn-secondary">Reset</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
