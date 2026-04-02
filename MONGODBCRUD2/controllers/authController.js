@@ -10,10 +10,7 @@ export const signup = async (req, res) => {
 
     const newUser = await user.create({
       name,
-      email,
-
-
-      
+      email,    
       password:hashedPassword,
     });
 
@@ -29,3 +26,7 @@ export const signup = async (req, res) => {
     });
   }
 };
+
+export const login=async(req,res)=>{
+  
+}
