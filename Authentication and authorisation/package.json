@@ -1,5 +1,5 @@
 {
-  "name": "mongodbcrud2",
+  "name": "authentication-and-authorisation",
   "version": "1.0.0",
   "description": "",
   "license": "ISC",
@@ -11,15 +11,11 @@
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
-  "keywords": [],
   "dependencies": {
     "bcrypt": "^6.0.0",
-    "cookie-parser": "^1.4.7",
-    "dotenv": "^17.3.1",
+    "bcryptjs": "^3.0.3",
     "express": "^5.2.1",
-    "express-session": "^1.19.0",
-    "jsonwebtoken": "^9.0.3",
-    "mongoose": "^9.3.1",
-    "nodemon": "^3.1.14"
-  }
+    "mongoose": "^9.3.3"
+  },
+  "devDependencies": {}
 }
