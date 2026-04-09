@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Employee</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="form-card">
+    <h2>Edit Employee</h2>
+
+    <form method="POST" action="/update/<%= employee.id %>">
+      <label>Name</label>
+      <input type="text" name="name" value="<%= employee.name %>">
+
+      <label>Gender</label>
+      <input type="radio" name="gender" value="Male" <%= employee.gender==='Male'?'checked':'' %>> Male
+      <input type="radio" name="gender" value="Female" <%= employee.gender==='Female'?'checked':'' %>> Female
+
+      <label>Salary</label>
+      <select name="salary">
+        <option selected><%= employee.salary %></option>
+        <option>20000</option>
+        <option>30000</option>
+      </select>
+
+      <label>Start Date</label>
+      <input type="date" name="startDate" value="<%= employee.startDate %>">
+
+      <div class="buttons">
+        <a href="/" class="btn-secondary">Cancel</a>
+        <button class="btn-primary">Update</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
